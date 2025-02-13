@@ -71,12 +71,13 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
                 style: TextStyle(color: Colors.yellow, fontSize: 70, fontWeight: FontWeight.bold,letterSpacing: 5),
               ),
             ),
-            const SizedBox(height: 40),
+            const SizedBox(height: 20),
 
             SlideTransition(
               position: _slideUp,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
+                  backgroundColor: Color(0xFFFFC905),
                   minimumSize: Size(screenWidth * 0.75, screenHeight * 0.075),
                 ),
                 onPressed: () {},
