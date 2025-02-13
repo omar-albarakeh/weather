@@ -16,10 +16,10 @@ class _splashscreenState extends State<splashscreen> {
         height: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-              begin:Alignment.centerRight,
-              end: Alignment.centerLeft,
-              colors:[Colors.blue, Colors.purple],
-        ),
+              begin:Alignment.center,
+              end: Alignment.bottomCenter,
+            colors: [Color(0xFF192A3C), Colors.purple],
+          ),
       ),
       )
     );
