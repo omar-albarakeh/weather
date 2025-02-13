@@ -8,8 +8,13 @@ class splashscreen extends StatefulWidget {
 }
 
 class _splashscreenState extends State<splashscreen> {
+
   @override
   Widget build(BuildContext context) {
+
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
         body: Container(
       width: double.infinity,
@@ -25,11 +30,21 @@ class _splashscreenState extends State<splashscreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("Weather",style: TextStyle(color: Colors.yellow,fontSize: 70,fontWeight: FontWeight.bold),),
-              Text("Forecasts",style: TextStyle(color: Colors.white,fontSize: 60,fontWeight: FontWeight.bold)),
+              Text("Weather",style: TextStyle(color: Colors.white,fontSize: 70,fontWeight: FontWeight.bold),),
+              Text("Forecasts",style: TextStyle(color: Colors.yellow,fontSize: 80,fontWeight: FontWeight.bold)),
               ElevatedButton(
-                  onPressed: (){},
-                  child: Text("Get Started",style: TextStyle(color: Color(0xFF192A3C),fontSize: 20,fontWeight: FontWeight.bold)),
+                style: ElevatedButton.styleFrom(
+                  minimumSize: Size(screenWidth*0.9, screenHeight*0.08),
+                ),
+                onPressed: () {},
+                child: Text(
+                  "Get Start",
+                  style: TextStyle(
+                    color: Color(0xFF192A3C),
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               )
             ],
           ),
