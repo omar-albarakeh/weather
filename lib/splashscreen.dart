@@ -68,7 +68,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               opacity: _fadeIn,
               child: const Text(
                 "Forecasts",
-                style: TextStyle(color: Colors.yellow, fontSize: 70, fontWeight: FontWeight.bold,letterSpacing: 5),
+                style: TextStyle(color: Colors.yellow, fontSize: 70, fontWeight: FontWeight.bold,letterSpacing: 4),
               ),
             ),
             const SizedBox(height: 20),
