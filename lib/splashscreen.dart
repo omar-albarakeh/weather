@@ -25,8 +25,12 @@ class _splashscreenState extends State<splashscreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text("Weather",style: TextStyle(color: Colors.yellow,fontSize: 80,fontWeight: FontWeight.bold),),
-              Text("Forecasts",style: TextStyle(color: Colors.white,fontSize: 80,fontWeight: FontWeight.bold))
+              Text("Weather",style: TextStyle(color: Colors.yellow,fontSize: 70,fontWeight: FontWeight.bold),),
+              Text("Forecasts",style: TextStyle(color: Colors.white,fontSize: 60,fontWeight: FontWeight.bold)),
+              ElevatedButton(
+                  onPressed: (){},
+                  child: Text("Get Started",style: TextStyle(color: Color(0xFF192A3C),fontSize: 20,fontWeight: FontWeight.bold)),
+              )
             ],
           ),
     ));
