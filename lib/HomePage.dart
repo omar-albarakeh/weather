@@ -11,8 +11,22 @@ class _HomepageState extends State<Homepage> {
   final WeatherService weatherService = WeatherService();
   Map<String, dynamic>? weatherData;
 
+  @override
+  void initState() {
+    super.initState();
+    fetchWeather();
+  }
 
-
+  Future<void> fetchWeather() async {
+    try {
+      final data = await weatherService.fetchCurrentWeather();
+      setState(() {
+        weatherData = data;
+      });
+    } catch (e) {
+      print("Error fetching weather: $e");
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,6 +40,17 @@ class _HomepageState extends State<Homepage> {
             end: Alignment.bottomCenter,
             colors: [Color(0xFF192A3C), Colors.purple],
           ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            weatherData == null
+                ? const CircularProgressIndicator()
+                : Text(
+              "Weather: ${floor(weatherData!['main']['temp']-273.15)}",
+              style: const TextStyle(color: Colors.white, fontSize: 20),
+            ),
+          ],
         ),
       ),
     );
