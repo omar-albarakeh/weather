@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'MyHomePage.dart';
+import 'HomePage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -113,7 +113,7 @@ class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderSt
               onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const Myhomepage()),
+                  MaterialPageRoute(builder: (context) => const Homepage()),
                 );
               },
               child: const Text(
