@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weatherapp/weatherService.dart';
+
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -46,11 +47,21 @@ class _HomepageState extends State<Homepage> {
           children: [
             weatherData == null
                 ? const CircularProgressIndicator()
-                : Text(
-              "Weather: ${floor(weatherData!['main']['temp']-273.15)}",
-              style: const TextStyle(color: Colors.white, fontSize: 20),
+                : Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Temperature: ${(weatherData!['main']['temp'] - 273.15).floor()}°C",
+                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Text(
+                  "City: ${weatherData!['name']}",
+                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                ),
+              ],
             ),
           ],
+
         ),
       ),
     );
