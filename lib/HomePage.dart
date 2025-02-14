@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:weatherapp/weatherService.dart';
 class Homepage extends StatefulWidget {
   const Homepage({super.key});
 
@@ -8,6 +8,12 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
+  final WeatherService weatherService = WeatherService();
+  Map<String, dynamic>? weatherData;
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
