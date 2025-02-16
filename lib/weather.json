@@ -1,0 +1,44 @@
+{
+  "coord": {
+    "lon": 0.1517,
+    "lat": 34.8303
+  },
+  "weather": [
+    {
+      "id": 804,
+      "main": "Clouds",
+      "description": "overcast clouds",
+      "icon": "04n"
+    }
+  ],
+  "base": "stations",
+  "main": {
+    "temp": 282.52,
+    "feels_like": 281.2,
+    "temp_min": 282.52,
+    "temp_max": 282.52,
+    "pressure": 1018,
+    "humidity": 97,
+    "sea_level": 1018,
+    "grnd_level": 902
+  },
+  "visibility": 10000,
+  "wind": {
+    "speed": 2.54,
+    "deg": 326,
+    "gust": 3.44
+  },
+  "clouds": {
+    "all": 95
+  },
+  "dt": 1739742447,
+  "sys": {
+    "country": "DZ",
+    "sunrise": 1739688254,
+    "sunset": 1739727778
+  },
+  "timezone": 3600,
+  "id": 2482572,
+  "name": "Saïda",
+  "cod": 200
+}
