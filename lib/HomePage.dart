@@ -15,9 +15,20 @@ class _HomepageState extends State<Homepage> {
   @override
   void initState() {
     super.initState();
-    fetchWeather();
+    _loadWeather();
   }
 
+  Future<void> _loadWeather() async{
+    try{
+      final data = await weatherService.fetchCurrentWeather();
+      setState(() {
+        weatherData =data;
+      });
+    }
+    catch (e) {
+      debugPrint("Error fetching weather data: $e");
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +56,6 @@ class _HomepageState extends State<Homepage> {
                 ),
                 Text(
                   "City: ${weatherData!['name']}",
-
                   style: const TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ],
