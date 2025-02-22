@@ -29,6 +29,20 @@ class _HomepageState extends State<Homepage> {
       debugPrint("Error fetching weather data: $e");
     }
   }
+
+  String _loadBackgroundImage() {
+    if (weatherData == null) return "lib/assets/images/default.jpg";
+    int data = weatherData!['weather'][0]['id'];
+    if (data >= 800 && data < 810) {
+      return "lib/assets/images/rainy.jpg";
+    } else {
+      return "lib/assets/images/rainy.jpg";
+    }
+  }
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,11 +50,12 @@ class _HomepageState extends State<Homepage> {
         width: double.infinity,
         height: double.infinity,
         decoration: BoxDecoration(
-          image:DecorationImage(
-        image:AssetImage("lib/assets/images/cloudy.jpeg"),
-            fit: BoxFit.cover
-          )
+          image: DecorationImage(
+            image: AssetImage(_loadBackgroundImage()),
+            fit: BoxFit.cover,
+          ),
         ),
+
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -55,6 +70,10 @@ class _HomepageState extends State<Homepage> {
                 ),
                 Text(
                   "City: ${weatherData!['name']}",
+                  style: const TextStyle(color: Colors.white, fontSize: 20),
+                ),
+                Text(
+                  "id: ${weatherData!['weather'][0]['id']}",
                   style: const TextStyle(color: Colors.white, fontSize: 20),
                 ),
               ],
